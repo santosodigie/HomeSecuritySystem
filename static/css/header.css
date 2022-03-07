@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
 }
 .wrapper{
-  background: #02005a;
+  background: #230083;
   position: fixed;
   width: 100%;
 }
@@ -51,7 +51,7 @@ nav .content .links{
 }
 .content .links li a:hover,
 .content .links li label:hover{
-  background: #6100b1;
+  background: #00ffff;
 }
 .wrapper .search-icon,
 .wrapper .menu-icon{
@@ -101,7 +101,7 @@ nav .content .links{
   transform: translateY(-50%);
   line-height: 60px;
   width: 70px;
-  background: #6b00b3;
+  background: #00ffff;
   border: none;
   outline: none;
   color: #fff;
@@ -112,7 +112,7 @@ nav .content .links{
 
 .search-box .go-icon:hover
 {
-    background: #ff00f2;
+    background: #00ffdd3f;
 }
 .wrapper input[type="checkbox"]{
   display: none;
@@ -120,7 +120,7 @@ nav .content .links{
 /* Dropdown Menu code start */
 .content .links ul{
   position: absolute;
-  background: #6100b1;
+  background: #00ffff;
   top: 80px;
   z-index: -1;
   opacity: 0;

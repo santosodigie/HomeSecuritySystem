@@ -5,7 +5,7 @@ html {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    background: linear-gradient(#230083,#0066ff);
   }
 
   .login-box {
@@ -15,7 +15,7 @@ html {
     width: 400px;
     padding: 40px;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,.5);
+    background: rgba(1, 0, 85, 0.5);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
@@ -58,7 +58,7 @@ html {
   .login-box .user-box input:valid ~ label {
     top: -20px;
     left: 0;
-    color: #03e9f4;
+    color: #00ffff;
     font-size: 12px;
   }
 
@@ -66,7 +66,7 @@ html {
     position: relative;
     display: inline-block;
     padding: 10px 20px;
-    color: #03e9f4;
+    color: #ffffff;
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
@@ -77,12 +77,12 @@ html {
   }
 
   .login-box a:hover {
-    background: #03e9f4;
+    background: #00ffff;
     color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4;
+    box-shadow: 0 0 5px #00ffff,
+                0 0 25px #00ffff,
+                0 0 50px #00ffff;
   }
 
   .login-box a span {
@@ -95,7 +95,7 @@ html {
     left: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, #03e9f4);
+    background: linear-gradient(90deg, transparent, #00ffff);
     animation: btn-anim1 1s linear infinite;
   }
 
@@ -113,7 +113,7 @@ html {
     right: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(180deg, transparent, #03e9f4);
+    background: linear-gradient(180deg, transparent, #00ffff);
     animation: btn-anim2 1s linear infinite;
     animation-delay: .25s
   }
@@ -132,7 +132,7 @@ html {
     right: -100%;
     width: 100%;
     height: 2px;
-    background: linear-gradient(270deg, transparent, #03e9f4);
+    background: linear-gradient(270deg, transparent, #00ffff);
     animation: btn-anim3 1s linear infinite;
     animation-delay: .5s
   }
@@ -151,7 +151,7 @@ html {
     left: 0;
     width: 2px;
     height: 100%;
-    background: linear-gradient(360deg, transparent, #03e9f4);
+    background: linear-gradient(360deg, transparent, #00ffff);
     animation: btn-anim4 1s linear infinite;
     animation-delay: .75s
   }
@@ -180,10 +180,10 @@ html {
     .seven h1:after,.seven h1:before {
         content: " ";
         display: block;
-        border-bottom: 1px solid #8400ff;;
-        border-top: 1px solid #ffffff;;
+        border-bottom: 1px solid #00ffff;;
+        border-top: 1px solid #00ffff;;
         height: 5px;
-      background-color:#8400ff;
+      background-color:#00ffff;
     }
 
     .sub
