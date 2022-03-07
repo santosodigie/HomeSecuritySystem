@@ -17,7 +17,7 @@ print(mysql)
 
 
 @app.route('/', methods=['GET', 'POST'])
-def login():
+def index():
     if request.method == "POST":
         if 'email' in request.form and 'password' in request.form:
             email = request.form['email']
@@ -34,7 +34,7 @@ def login():
                 return redirect(url_for('home'))
             else:
                 msg = "Incorrect username or password"
-    return render_template("index.html", msg=msg)
+    return render_template("index.html")
 
 
 @app.route('/logout')
