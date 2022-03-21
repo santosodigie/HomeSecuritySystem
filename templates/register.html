@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/x-icon" href="static/images/camera3.ico">
     <link rel="stylesheet" type="text/css" href="static/css/main.css">
 </head>
 <title>Register</title>
@@ -10,31 +11,29 @@
       </div>
     <div class="login-box">
         <h2>Register</h2>
-        <form>
+        <form id="myform" action="{{ url_for('register') }}" method="post">
           <div class="user-box">
-            <input type="text" name="" required="">
+            <input type="text" name="username" autocomplete="off" required="">
             <label>Username</label>
           </div>
           <div class="user-box">
-            <input type="password" name="" required="">
+            <input type="password" name="password" autocomplete="off" required="">
             <label>Password</label>
           </div>
           <div class="user-box">
-            <input type="email" name="" required="">
+            <input type="email" name="email" autocomplete="off" required="">
             <label>Email</label>
-              <div class="msg">{{ msg }}</div>
           </div>
-
-
-          <a href="#">
+          <a href="#" onclick="document.getElementById('myform').submit()">
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             Submit
           </a>
+            <div class="msg">{{ msg }}</div>
         </form>
-        <p style="color:rgb(0, 255, 213)">Already have an account? <a href="index.html" style="text-decoration: none;">Log In</a>.</p>
+        <p style="color:rgb(0, 255, 213)">Already have an account? <a href="/" style="text-decoration: none;">Log In</a>.</p>
       </div>
 </body>
 </html>

@@ -1,9 +1,13 @@
-from flask import Flask, render_template, request, session, redirect, url_for
+from flask import Flask, render_template, request, session, redirect, url_for, flash
 from flask_mysqldb import MySQL, MySQLdb
 from mysql.connector import connect, Error
 # from pubnub.callbacks import SubscribeCallback
 import MySQLdb.cursors
 import re
+from pubnub.callbacks import SubscribeCallback
+from pubnub.pnconfiguration import PNConfiguration
+from pubnub.pubnub import PubNub
+
 
 app = Flask(__name__)
 app.secret_key = "AzurCam123"
@@ -18,6 +22,7 @@ print(mysql)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    msg = ''
     if request.method == "POST":
         if 'email' in request.form and 'password' in request.form:
             email = request.form['email']
@@ -33,8 +38,9 @@ def index():
                 session['username'] = account['username']
                 return redirect(url_for('home'))
             else:
-                msg = "Incorrect username or password"
-    return render_template("index.html")
+                msg = 'Incorrect username or password'
+
+    return render_template('index.html', msg=msg)
 
 
 @app.route('/logout')
@@ -42,10 +48,11 @@ def logout():
     session.pop('loggedin', None)
     session.pop('id', None)
     session.pop('username', None)
-    return redirect(url_for('login'))
+    flash("You have been logged out", "info")
+    return redirect(url_for('index'))
 
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     msg = ''
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form and 'email' in request.form:
@@ -58,16 +65,17 @@ def register():
 
         if account:
             msg = 'Account already exists!'
-        elif not re.match(r'[^@]+@[^@]+\.[^@]+]', email):
+        elif not username or not password or not email:
+            msg = 'Please fill out the form!'
+        elif not re.match(r'[^@]+@[^@]+\.[^@]+', email):
             msg = 'Invalid email address!'
         elif not re.match(r'[A-Za-z0-9]+', username):
             msg = 'Username must contain only characters and numbers!'
-        elif not username or not password or not email:
-            msg = 'Please fill out the form!'
         else:
             cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username, password, email,))
             mysql.connection.commit()
-            msg = 'You have successfully registered!'
+            # msg = 'You have successfully registered!'
+            return redirect(url_for('index'))
 
     elif request.method == 'POST':
         msg = 'Please fill out the form!'

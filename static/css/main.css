@@ -8,6 +8,10 @@ html {
     background: linear-gradient(#230083,#0066ff);
   }
 
+  .msg {
+    color: red;
+  }
+
   .login-box {
     position: absolute;
     top: 50%;
@@ -194,3 +198,26 @@ html {
         justify-content: center;
 
     }
+
+.alert {
+  z-index: -1;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  z-index: -1;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
