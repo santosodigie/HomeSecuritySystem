@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<body>
+<div class="helpContainer">
+    <div class="helpImage">
+
+    </div>
+
+    <div class="box">
+        <p class="setupHeading">Setup</p>
+        <div class="faqs">
+            <form action="/setup" method="post">
+                    <h2>Enter camera id:</h2>
+                    <input class="setupInput" type="text" name="iot_id" value="{{session['iot_id']}}">
+                <p> </p>
+                    <button class="form-btn">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+{% endblock %}
