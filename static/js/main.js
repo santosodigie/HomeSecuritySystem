@@ -42,8 +42,8 @@ function time()
 
 
 pubnub = new Pubnub({
-            publishKey : "",
-            subscribeKey : "",
+            publishKey : "pub-c-7317ff41-d6d6-4c5d-958e-0006f43407ae",
+            subscribeKey : "sub-c-fab291ca-3e0b-42e9-bed7-23401929e441",
             uuid: ""
             });
 
