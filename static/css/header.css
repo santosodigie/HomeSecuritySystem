@@ -1,6 +1,9 @@
 body
 {
-    background-image: linear-gradient(#230083, #0066ff);
+    background-image: linear-gradient(#230083, #0066ff);background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 75%;
+    background-attachment: fixed;
 }
 
 ul {

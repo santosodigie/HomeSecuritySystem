@@ -3,8 +3,10 @@
  <head>
      <meta charset="UTF-8" />
 <!--     A icon by Icons8-->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="icon" type="image/x-icon" href="static/images/camera3.ico">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/x-icon" href="static/images/camera3.ico">
      <link rel="stylesheet" href="static/css/header.css"/>
+     <link rel="stylesheet" href="static/css/main.css"/>
  <title>AzurCam</title>
 </head>
  <header>
@@ -13,10 +15,9 @@
             <li><a>{{ username }}</a></li>
         </div>
         <li><a href="{{ url_for('logout') }}">logout</a></li>
-        <li><a href="#about">Settings</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#dashboard">Dashboard</a></li>
-        <li><a href="#home">Home</a></li>
+        <li><a href="/setup">Settings</a></li>
+        <li><a href="/home">Home</a></li>
         <li><a>AZURCAM</a></li>
     </ul>
  </header>

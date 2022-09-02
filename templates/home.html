@@ -2,55 +2,32 @@
 
 {% block body %}
 <body>
-<div class="slideshow-container">
+<div id="vidContainerAlpha">
+    <div class="vidContainer">
+        <div class="video-gallery">
+            <div class="imageContainerAlpha">
+                {% if length <= 0  %}
+                <div class="emptyImageContainer">
+                    <h1>Setup Instructions:</h1>
+                    <h2>1. Go to Settings page</h2>
+                    <h2>2. Find details on camera</h2>
+                    <h2>3. Enter the camera ID on settings page</h2>
+                    <h2>Images will display here when available</h2>
+                </div>
+                {% else %}
+                {% for x in (userDict) %}
+                <div class="imageContainer">
+                    <p>Date Taken: {{userDict[x]}}</p>
 
-      <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="static/images/security4.png" style="width:100%; height:33em;">
-      <div class="text">Welcome to your AzurCam account</div>
-      </div>
-
-      <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="static/images/security2.jpg" style="width:100%; height:33em;">
-      <div class="text">Here you will be able to acces all the neccessary features you need</div>
-      </div>
-
-      <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="static/images/security3.jpg" style="width:100%; height:33em;">
-      <div class="text">We hope we can help you feel more secure</div>
-      </div>
-
-      </div>
-      <br>
-
-      <div style="text-align:center">
-          <span class="dot"></span>
-          <span class="dot"></span>
-          <span class="dot"></span>
-      </div>
-      <script>
-              var slideIndex = 0;
-              showSlides();
-
-              function showSlides() {
-              var i;
-              var slides = document.getElementsByClassName("mySlides");
-              var dots = document.getElementsByClassName("dot");
-              for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";
-              }
-              slideIndex++;
-              if (slideIndex > slides.length) {slideIndex = 1}
-              for (i = 0; i < dots.length; i++) {
-                  dots[i].className = dots[i].className.replace(" active", "");
-              }
-              slides[slideIndex-1].style.display = "block";
-              dots[slideIndex-1].className += " active";
-              setTimeout(showSlides, 7000); // Change image every 2 seconds
-              }
-      </script>
+                    <img width="860" height="515" class="imageCenter"
+                        src="https://s3-eu-west-1.amazonaws.com/azur-bucket/{{x}}.jpg"
+                        allowfullscreen/>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 </body>
-
 {% endblock %}

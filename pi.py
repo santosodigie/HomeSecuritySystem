@@ -14,5 +14,5 @@ pnconfig.publish_key = "pub-c-0586af82-d21f-4eb0-a261-9b0ec1e03ba0"
 pubnub = PubNub(pnconfig)
 pubnub.publish() \
     .channel("azurcam-channel") \
-    .message({"sender": uuid.getnode(), "content": "Motion Detected"}) \
+    .message({"image-reference": uuid.getnode(), "time": "22:22:15"}) \
     .pn_async(my_publish_callback)
